@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Arsenal Trade</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav__header">
+                <li class="active" id="btn-profile" >
+                    <div onclick="toggleProfile()">
+                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="a" fill="#ffffff">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14 1h37c7.18 0 13 5.82 13 13v37c0 7.18-5.82 13-13 13H14C6.82 64 1 58.18 1 51V14C1 6.82 6.82 1 14 1M0 14C0 6.268 6.268 0 14 0h37c7.732 0 14 6.268 14 14v37c0 7.732-6.268 14-14 14H14C6.268 65 0 58.732 0 51zm40 2a8 8 0 1 1-16 0 8 8 0 0 1 16 0m1 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0m-8.485 16c5.12 0 9.822 2.248 13.514 6H46v14H19V38c3.693-3.752 8.395-6 13.515-6m0 1c4.648 0 8.992 1.994 12.474 5.38q.01.305.011.62v12H20V39h.01q-.01-.246-.01-.5v-.08C23.49 35.01 27.848 33 32.515 33" />
+                            </mask>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14 1h37c7.18 0 13 5.82 13 13v37c0 7.18-5.82 13-13 13H14C6.82 64 1 58.18 1 51V14C1 6.82 6.82 1 14 1M0 14C0 6.268 6.268 0 14 0h37c7.732 0 14 6.268 14 14v37c0 7.732-6.268 14-14 14H14C6.268 65 0 58.732 0 51zm40 2a8 8 0 1 1-16 0 8 8 0 0 1 16 0m1 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0m-8.485 16c5.12 0 9.822 2.248 13.514 6H46v14H19V38c3.693-3.752 8.395-6 13.515-6m0 1c4.648 0 8.992 1.994 12.474 5.38q.01.305.011.62v12H20V39h.01q-.01-.246-.01-.5v-.08C23.49 35.01 27.848 33 32.515 33"
+                                fill="#ffffff" />
+                            <path
+                                d="M46.03 38v1h2.387l-1.675-1.701zM46 38v-1h-1v1zm0 14v1h1v-1zm-27 0h-1v1h1zm0-13h-1zm0-1-.713-.701-.287.291V38zm25.989.38.999-.037-.015-.4-.287-.28zM45 51v1h1v-1zm-25 0h-1v1h1zm0-12v-1h-1v1zm.01 0v1h1.037l-.038-1.037zm-.01-.5-1-.003v.003zm0-.08-.699-.715-.3.293v.42zM51 0H14v2h37zm14 14c0-7.732-6.268-14-14-14v2c6.627 0 12 5.373 12 12zm0 37V14h-2v37zM51 65c7.732 0 14-6.268 14-14h-2c0 6.627-5.373 12-12 12zm-37 0h37v-2H14zM0 51c0 7.732 6.268 14 14 14v-2C7.373 63 2 57.627 2 51zm0-37v37h2V14zM14 0C6.268 0 0 6.268 0 14h2C2 7.373 7.373 2 14 2zm0-1C5.716-1-1 5.716-1 14h2C1 6.82 6.82 1 14 1zm37 0H14v2h37zm15 15c0-8.284-6.716-15-15-15v2c7.18 0 13 5.82 13 13zm0 37V14h-2v37zM51 66c8.284 0 15-6.716 15-15h-2c0 7.18-5.82 13-13 13zm-37 0h37v-2H14zM-1 51c0 8.284 6.716 15 15 15v-2C6.82 64 1 58.18 1 51zm0-37v37h2V14zm33 11a9 9 0 0 0 9-9h-2a7 7 0 0 1-7 7zm-9-9a9 9 0 0 0 9 9v-2a7 7 0 0 1-7-7zm9-9a9 9 0 0 0-9 9h2a7 7 0 0 1 7-7zm9 9a9 9 0 0 0-9-9v2a7 7 0 0 1 7 7zm-9 10c5.523 0 10-4.477 10-10h-2a8 8 0 0 1-8 8zM22 16c0 5.523 4.477 10 10 10v-2a8 8 0 0 1-8-8zM32 6c-5.523 0-10 4.477-10 10h2a8 8 0 0 1 8-8zm10 10c0-5.523-4.477-10-10-10v2a8 8 0 0 1 8 8zm4.742 21.299C42.892 33.385 37.942 31 32.515 31v2c4.812 0 9.267 2.11 12.802 5.701zM46 39h.03v-2H46zm1 0v-1h-2v1zm0 .43V39h-2v.43zM47 51V39.43h-2V51zm0 1v-1h-2v1zm-2 1h1v-2h-1zm-25 0h25v-2H20zm-1 0h1v-2h-1zm-1-2v1h2v-1zm0-12v12h2V39zm0-1v1h2v-1zm14.515-7c-5.428 0-10.377 2.385-14.228 6.299l1.426 1.402C23.247 35.11 27.703 33 32.515 33zm13.17 6.663C42.048 34.125 37.463 32 32.516 32v2c4.35 0 8.452 1.864 11.776 5.097zM46 39a18 18 0 0 0-.012-.657l-1.999.074q.01.287.011.583zm0 12V39h-2v12zm-26 1h25v-2H20zm-1-13v12h2V39zm1.01-1H20v2h.01zm-1.01.5q0 .272.01.537l1.999-.074A13 13 0 0 1 21 38.5zm0-.083v.08l2 .006v-.08zM32.515 32c-4.966 0-9.568 2.14-13.214 5.705l1.398 1.43C24.031 35.88 28.15 34 32.515 34z"
+                                fill="#ffffff"/>
+                        </svg>
+                        Профиль
+                    </div>
+                </li>
+                <hr>
+                <li id="btn-bots">
+                    <div onclick="toggleBots()">
+                        <svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M29.5601 0C32.0811 0 34.6022 0 37.1232 0C37.1232 1.62495 37.1232 3.2499 37.1232 4.87484C43.9421 4.40496 50.5599 4.9466 56.9764 6.49979C58.237 15.1661 58.237 23.8326 56.9764 32.499C41.22 34.6655 25.4633 34.6655 9.70691 32.499C8.44633 23.8326 8.44633 15.1661 9.70691 6.49979C16.1235 4.9466 22.7412 4.40496 29.5601 4.87484C29.5601 3.2499 29.5601 1.62495 29.5601 0ZM18.2154 9.74969C28.3192 9.47991 38.4035 9.75074 48.4679 10.5622C53.51 16.5204 53.51 22.4784 48.4679 28.4366C38.3838 29.5199 28.2995 29.5199 18.2154 28.4366C13.2516 22.21 13.2516 15.981 18.2154 9.74969Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.1062 14.6245C23.2576 14.6245 26.4087 14.6245 29.5601 14.6245C29.5601 17.3328 29.5601 20.041 29.5601 22.7493C26.4087 22.7493 23.2576 22.7493 20.1062 22.7493C20.1062 20.041 20.1062 17.3328 20.1062 14.6245Z" fill="white"/>
+                            <path  fill-rule="evenodd" clip-rule="evenodd" d="M37.1232 14.6245C40.2746 14.6245 43.4258 14.6245 46.5771 14.6245C46.5771 17.3328 46.5771 20.041 46.5771 22.7493C43.4258 22.7493 40.2746 22.7493 37.1232 22.7493C37.1232 20.041 37.1232 17.3328 37.1232 14.6245Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.98 38.9987C23.8984 38.7282 42.8062 38.9991 61.7034 39.8112C67.4516 52.7703 62.4094 60.8951 46.5772 64.1854C34.1842 65.9415 22.2094 64.8582 10.6523 60.9355C2.95577 54.8521 1.06499 47.5398 4.98 38.9987ZM12.5431 43.8736C26.4231 43.6034 40.2888 43.8741 54.1403 44.6861C56.8271 51.6707 53.6759 56.0038 44.6864 57.6857C37.1233 58.769 29.5601 58.769 21.997 57.6857C12.5331 55.861 9.38174 51.2569 12.5431 43.8736Z" fill="white"/>
+                        </svg>
+                        Боты
+                    </div>
+                </li>
+                <hr>
+                <li id="btn-exchanges">
+                    <div onclick="toggleExchanges()">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64px" height="64px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g><path style="opacity:0.977" fill="#ffffff" d="M 3.5,7.5 C 22.1667,7.5 40.8333,7.5 59.5,7.5C 59.5,23.5 59.5,39.5 59.5,55.5C 40.8333,55.5 22.1667,55.5 3.5,55.5C 3.5,39.5 3.5,23.5 3.5,7.5 Z M 6.5,9.5 C 23.17,9.3334 39.8367,9.50007 56.5,10C 57.4874,21.0854 57.8207,32.252 57.5,43.5C 40.1667,43.5 22.8333,43.5 5.5,43.5C 5.18937,32.0857 5.5227,20.7524 6.5,9.5 Z M 5.5,45.5 C 22.8333,45.5 40.1667,45.5 57.5,45.5C 57.7683,48.1194 57.435,50.6194 56.5,53C 39.8333,53.6667 23.1667,53.6667 6.5,53C 5.565,50.6194 5.23166,48.1194 5.5,45.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,11.5 C 21.337,11.6395 21.6704,12.3061 20.5,13.5C 19.7025,13.0431 19.3691,12.3764 19.5,11.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,11.5 C 43.337,11.6395 43.6704,12.3061 42.5,13.5C 41.7025,13.0431 41.3691,12.3764 41.5,11.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,15.5 C 21.337,15.6395 21.6704,16.3061 20.5,17.5C 19.7025,17.0431 19.3691,16.3764 19.5,15.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,15.5 C 43.337,15.6395 43.6704,16.3061 42.5,17.5C 41.7025,17.0431 41.3691,16.3764 41.5,15.5 Z"/></g>
+                            <g><path style="opacity:0.619" fill="#ffffff" d="M 19.5,28.5 C 16.3097,31.8872 12.3097,33.5538 7.5,33.5C 7.84617,29.333 10.1795,27.4997 14.5,28C 16.3545,24.7669 19.0212,23.4336 22.5,24C 25.5,28.6667 28.5,28.6667 31.5,24C 34.9457,23.3387 38.2791,22.5054 41.5,21.5C 42.1667,22.8333 42.8333,22.8333 43.5,21.5C 47.1606,19.0954 51.1606,17.4287 55.5,16.5C 54.8339,20.9907 52.1672,23.1574 47.5,23C 45.5554,26.3174 42.8888,27.1508 39.5,25.5C 35.0523,26.6508 31.0523,28.6508 27.5,31.5C 25.444,30.9524 23.7774,29.7858 22.5,28C 21.2506,27.2599 20.2506,27.4265 19.5,28.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,19.5 C 21.337,19.6395 21.6704,20.3061 20.5,21.5C 19.7025,21.0431 19.3691,20.3764 19.5,19.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 43.5,21.5 C 42.8333,21.5 42.1667,21.5 41.5,21.5C 42.1667,18.8333 42.8333,18.8333 43.5,21.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,28.5 C 21.337,28.6395 21.6704,29.3061 20.5,30.5C 19.7025,30.0431 19.3691,29.3764 19.5,28.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,28.5 C 43.337,28.6395 43.6704,29.3061 42.5,30.5C 41.7025,30.0431 41.3691,29.3764 41.5,28.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,32.5 C 21.337,32.6395 21.6704,33.3061 20.5,34.5C 19.7025,34.0431 19.3691,33.3764 19.5,32.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,32.5 C 43.337,32.6395 43.6704,33.3061 42.5,34.5C 41.7025,34.0431 41.3691,33.3764 41.5,32.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,36.5 C 21.337,36.6395 21.6704,37.3061 20.5,38.5C 19.7025,38.0431 19.3691,37.3764 19.5,36.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,36.5 C 43.337,36.6395 43.6704,37.3061 42.5,38.5C 41.7025,38.0431 41.3691,37.3764 41.5,36.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 19.5,40.5 C 21.337,40.6395 21.6704,41.3061 20.5,42.5C 19.7025,42.0431 19.3691,41.3764 19.5,40.5 Z"/></g>
+                            <g><path style="opacity:0.766" fill="#ffffff" d="M 41.5,40.5 C 43.337,40.6395 43.6704,41.3061 42.5,42.5C 41.7025,42.0431 41.3691,41.3764 41.5,40.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 8.5,47.5 C 9.58617,47.62 10.2528,48.2867 10.5,49.5C 10.1667,50.1667 9.83333,50.8333 9.5,51.5C 8.57131,50.3112 8.23798,48.9778 8.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 13.5,47.5 C 14.5862,47.62 15.2528,48.2867 15.5,49.5C 15.1667,50.1667 14.8333,50.8333 14.5,51.5C 13.5713,50.3112 13.238,48.9778 13.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 18.5,47.5 C 19.5862,47.62 20.2528,48.2867 20.5,49.5C 20.1667,50.1667 19.8333,50.8333 19.5,51.5C 18.5713,50.3112 18.238,48.9778 18.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 23.5,47.5 C 24.5862,47.62 25.2528,48.2867 25.5,49.5C 25.1667,50.1667 24.8333,50.8333 24.5,51.5C 23.5713,50.3112 23.238,48.9778 23.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 28.5,47.5 C 29.5862,47.62 30.2528,48.2867 30.5,49.5C 30.1667,50.1667 29.8333,50.8333 29.5,51.5C 28.5713,50.3112 28.238,48.9778 28.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 33.5,47.5 C 34.5862,47.62 35.2528,48.2867 35.5,49.5C 35.1667,50.1667 34.8333,50.8333 34.5,51.5C 33.5713,50.3112 33.238,48.9778 33.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 38.5,47.5 C 39.5862,47.62 40.2528,48.2867 40.5,49.5C 40.1667,50.1667 39.8333,50.8333 39.5,51.5C 38.5713,50.3112 38.238,48.9778 38.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 43.5,47.5 C 44.5862,47.62 45.2528,48.2867 45.5,49.5C 45.1667,50.1667 44.8333,50.8333 44.5,51.5C 43.5713,50.3112 43.238,48.9778 43.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 48.5,47.5 C 49.5862,47.62 50.2528,48.2867 50.5,49.5C 50.1667,50.1667 49.8333,50.8333 49.5,51.5C 48.5713,50.3112 48.238,48.9778 48.5,47.5 Z"/></g>
+                            <g><path style="opacity:0.883" fill="#ffffff" d="M 53.5,47.5 C 54.5862,47.62 55.2528,48.2867 55.5,49.5C 55.1667,50.1667 54.8333,50.8333 54.5,51.5C 53.5713,50.3112 53.238,48.9778 53.5,47.5 Z"/></g>
+                        </svg>
+                        Биржи
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="logo">
+        <p>arsenal trade</p>
+    </div>
+    <div class="container">
+        <div id="container__profile" style="display: block;">
+            <div class="block__info">
+                <div class="main__block" id="main__block">
+                    <div class="block__rotated" id="block__rotated"></div>
+                    <div class="profile__block">
+                        <svg width="40" height="40" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="a" fill="#fff">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14 1h37c7.18 0 13 5.82 13 13v37c0 7.18-5.82 13-13 13H14C6.82 64 1 58.18 1 51V14C1 6.82 6.82 1 14 1M0 14C0 6.268 6.268 0 14 0h37c7.732 0 14 6.268 14 14v37c0 7.732-6.268 14-14 14H14C6.268 65 0 58.732 0 51zm40 2a8 8 0 1 1-16 0 8 8 0 0 1 16 0m1 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0m-8.485 16c5.12 0 9.822 2.248 13.514 6H46v14H19V38c3.693-3.752 8.395-6 13.515-6m0 1c4.648 0 8.992 1.994 12.474 5.38q.01.305.011.62v12H20V39h.01q-.01-.246-.01-.5v-.08C23.49 35.01 27.848 33 32.515 33" />
+                            </mask>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M14 1h37c7.18 0 13 5.82 13 13v37c0 7.18-5.82 13-13 13H14C6.82 64 1 58.18 1 51V14C1 6.82 6.82 1 14 1M0 14C0 6.268 6.268 0 14 0h37c7.732 0 14 6.268 14 14v37c0 7.732-6.268 14-14 14H14C6.268 65 0 58.732 0 51zm40 2a8 8 0 1 1-16 0 8 8 0 0 1 16 0m1 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0m-8.485 16c5.12 0 9.822 2.248 13.514 6H46v14H19V38c3.693-3.752 8.395-6 13.515-6m0 1c4.648 0 8.992 1.994 12.474 5.38q.01.305.011.62v12H20V39h.01q-.01-.246-.01-.5v-.08C23.49 35.01 27.848 33 32.515 33"
+                                fill="#fff" />
+                            <path
+                                d="M46.03 38v1h2.387l-1.675-1.701zM46 38v-1h-1v1zm0 14v1h1v-1zm-27 0h-1v1h1zm0-13h-1zm0-1-.713-.701-.287.291V38zm25.989.38.999-.037-.015-.4-.287-.28zM45 51v1h1v-1zm-25 0h-1v1h1zm0-12v-1h-1v1zm.01 0v1h1.037l-.038-1.037zm-.01-.5-1-.003v.003zm0-.08-.699-.715-.3.293v.42zM51 0H14v2h37zm14 14c0-7.732-6.268-14-14-14v2c6.627 0 12 5.373 12 12zm0 37V14h-2v37zM51 65c7.732 0 14-6.268 14-14h-2c0 6.627-5.373 12-12 12zm-37 0h37v-2H14zM0 51c0 7.732 6.268 14 14 14v-2C7.373 63 2 57.627 2 51zm0-37v37h2V14zM14 0C6.268 0 0 6.268 0 14h2C2 7.373 7.373 2 14 2zm0-1C5.716-1-1 5.716-1 14h2C1 6.82 6.82 1 14 1zm37 0H14v2h37zm15 15c0-8.284-6.716-15-15-15v2c7.18 0 13 5.82 13 13zm0 37V14h-2v37zM51 66c8.284 0 15-6.716 15-15h-2c0 7.18-5.82 13-13 13zm-37 0h37v-2H14zM-1 51c0 8.284 6.716 15 15 15v-2C6.82 64 1 58.18 1 51zm0-37v37h2V14zm33 11a9 9 0 0 0 9-9h-2a7 7 0 0 1-7 7zm-9-9a9 9 0 0 0 9 9v-2a7 7 0 0 1-7-7zm9-9a9 9 0 0 0-9 9h2a7 7 0 0 1 7-7zm9 9a9 9 0 0 0-9-9v2a7 7 0 0 1 7 7zm-9 10c5.523 0 10-4.477 10-10h-2a8 8 0 0 1-8 8zM22 16c0 5.523 4.477 10 10 10v-2a8 8 0 0 1-8-8zM32 6c-5.523 0-10 4.477-10 10h2a8 8 0 0 1 8-8zm10 10c0-5.523-4.477-10-10-10v2a8 8 0 0 1 8 8zm4.742 21.299C42.892 33.385 37.942 31 32.515 31v2c4.812 0 9.267 2.11 12.802 5.701zM46 39h.03v-2H46zm1 0v-1h-2v1zm0 .43V39h-2v.43zM47 51V39.43h-2V51zm0 1v-1h-2v1zm-2 1h1v-2h-1zm-25 0h25v-2H20zm-1 0h1v-2h-1zm-1-2v1h2v-1zm0-12v12h2V39zm0-1v1h2v-1zm14.515-7c-5.428 0-10.377 2.385-14.228 6.299l1.426 1.402C23.247 35.11 27.703 33 32.515 33zm13.17 6.663C42.048 34.125 37.463 32 32.516 32v2c4.35 0 8.452 1.864 11.776 5.097zM46 39a18 18 0 0 0-.012-.657l-1.999.074q.01.287.011.583zm0 12V39h-2v12zm-26 1h25v-2H20zm-1-13v12h2V39zm1.01-1H20v2h.01zm-1.01.5q0 .272.01.537l1.999-.074A13 13 0 0 1 21 38.5zm0-.083v.08l2 .006v-.08zM32.515 32c-4.966 0-9.568 2.14-13.214 5.705l1.398 1.43C24.031 35.88 28.15 34 32.515 34z"
+                                fill="#fff" mask="url(#a)" />
+                        </svg>
+                        <div class="profile__text">Профиль</div>
+                    </div>
+                    <div class="profile__main-block">
+                        <div class="profile__info-block">
+                            <div class="username__block">
+                                <div class="username__title">{User_name}</div>
+                                <div class="username__text">Имя пользователя</div>
+                            </div>
+                            <div class="balance__block">
+                                <div class="balance">{Count_balance}</div>
+                                <div class="balance__text">Баланс</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__buttons">
+                        <a class="deposit__button" href="#">Пополнить счёт</a>
+                        <button class="settings__button open-popup-btn" data-popup="popup" data-overlay="overlay">Настройки</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pnl__title">
+                <div class="pnl"><span class="lightgreen">{Count_day}</span><br>Pnl/день</div>
+                <div class="pnl__row">
+                    <div class="pnl"><span class="lightgreen">{Count_week}</span><br>Pnl/неделя</div>
+                    <div class="pnl"><span class="lightgreen">{Count_mounth}</span><br>Pnl/месяц</div>
+                </div>
+            </div>
+
+
+            <div class="pnl__winrate">
+                <div class="winrate__percent">WINRATE - <span class="lightgreen">{Count_winrate}</span></div>
+                <div class="pnl__block">
+                    <div class="pnl__plus">Количество успешных сделок: <span class="lightgreen">{Count_success}</span></div>
+                    <div class="pnl__minus">Количество убыточных сделок: <span class="lightred">{Count_loss}</span></div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div id="container__bots" style="display: none;">
+            <div class="bot__block">
+                <div class="bot__nav">
+                    <button id="futuresBtn" class="btn__nav active">FUTURES</button>
+                    <hr>
+                    <button id="spotBtn" class="btn__nav">SPOT</button>
+                </div>
+            </div>
+            <div class="slider slider1" style="display: none;">
+                <input checked type="radio" name="slider1" id="switch1-1">
+                <input type="radio" name="slider1" id="switch1-2">
+                <div class="slides">
+                    <div class="overflow">
+                        <div class="slider-inner">
+                            <div class="slide">
+                                <div class="bot__main">
+                                    <div class="main__block" id="main__block">
+                                        <div class="block__rotated" id="block__rotated"></div>
+    
+                                        <div class="bot__spot">
+                                            <div id="spotContent" class="spot__main">
+                                                <div class="header__spot">
+                                                    <div></div>
+                                                    <div class="spot__name">
+                                                        <img src="../img/m16.png">
+                                                        <h3>M16</h3>
+                                                    </div>
+                                                    <div class="lightgreen">30$/месяц</div>
+                                                </div>
+                                                <div class="spot__block">
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Минимальный депозит</div>
+                                                        <div class="spot__component-price">
+                                                            <span class="lightgreen">120$</span>
+                                                            USDT
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Целевая доходность</div>
+                                                        <div class="spot__component-price">
+                                                            до
+                                                            <span class="lightgreen">60%</span>
+                                                            в месяц
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Направление торговли</div>
+                                                        <div class="spot__component-price">LONG/SHORT</div>
+                                                    </div>
+                                                </div>
+                                                <div class="spot__description">
+                                                    Уникальный алгоритм по принципу сеточной торговли, с высоким уровнем
+                                                    доходности и низким риском.
+                                                </div>
+                                                <ul class="spot__list">
+                                                    <li>Защита от "зависания"</li>
+                                                    <li>Защиа от "пампов/дампов"</li>
+                                                    <li>Грамотный расчет рисков</li>
+                                                </ul>
+                                                <div class="btn__block">
+                                                    <button class="add__btn open-popup-btn"
+                                                    data-popup="spotM16Buy" data-overlay="overlayM16Buy">Создать</button>
+                                                    <button class="more__btn open-popup-btn"
+                                                    data-popup="spotM16Description" data-overlay="overlayM16Description">Подробнее</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="bot__main">
+                                    <div class="main__block" id="main__block">
+                                        <div class="block__rotated" id="block__rotated"></div>
+                                        <div class="bot__spot">
+                                            <div id="spotContent" class="spot__main">
+                                                <div class="header__spot">
+                                                    <div></div>
+                                                    <div class="spot__name">
+                                                        <img src="../img/deagle.png">
+                                                        <h3>DESERT DEAGLE (в разработке)</h3>
+                                                    </div>
+                                                    <div class="lightgreen">30$/месяц</div>
+                                                </div>
+                                                <div class="spot__block">
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Минимальный депозит</div>
+                                                        <div class="spot__component-price">
+                                                            <span class="lightgreen">60$</span>
+                                                            USDT
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Целевая доходность</div>
+                                                        <div class="spot__component-price">
+                                                            <span class="lightgreen">N/N%</span>
+                                                            в месяц
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Направление торговли</div>
+                                                        <div class="spot__component-price">LONG</div>
+                                                    </div>
+                                                </div>
+                                                <div class="spot__description">
+                                                    «Сеточный алгоритм торговли, на основе формации (Двойное дно)
+                                                </div>
+                                                <ul class="spot__list">
+                                                    <li>Защита от "зависания"</li>
+                                                    <li>Грамотный расчет рисков</li>
+                                                </ul>
+                                                <div class="btn__block">
+                                                    <button class="add__btn open-popup-btn" disabled style="color: #fff; background: rgb(61, 61, 61);"
+                                                    data-popup="spotDeagleBuy" data-overlay="overlayDeagleBuy">Создать</button>
+                                                    <button class="more__btn open-popup-btn"
+                                                    data-popup="spotDeagleDescription" data-overlay="overlayDeagleDescription">Подробнее</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dots">
+                    <div class="dots__main" style="width: 60px;">
+                        <label for="switch1-1"></label>
+                        <label for="switch1-2"></label>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="slider slider2">
+                <input checked type="radio" name="slider2" id="switch2-1">
+                <input type="radio" name="slider2" id="switch2-2">
+                <div class="slides">
+                    <div class="overflow">
+                        <div class="slider-inner">
+                            <div class="slide">
+                                <div class="bot__main">
+                                    <div class="main__block" id="main__block">
+                                        <div class="block__rotated" id="block__rotated"></div>
+                                        <div class="bot__spot">
+                                            <div id="spotContent" class="spot__main">
+                                                <div class="header__spot">
+                                                    <div></div>
+                                                    <div class="spot__name">
+                                                        <img src="../img/m16.png">
+                                                        <h3>M16</h3>
+                                                    </div>
+                                                    <div class="lightgreen">30$/месяц</div>
+                                                </div>
+                                                <div class="spot__block">
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Минимальный депозит</div>
+                                                        <div class="spot__component-price">
+                                                            <span class="lightgreen">250$</span>
+                                                            USDT
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Целевая доходность</div>
+                                                        <div class="spot__component-price">до
+                                                            <span class="lightgreen">N/N</span>
+                                                            в месяц
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Направление торговли</div>
+                                                        <div class="spot__component-price">LONG/SHORT</div>
+                                                    </div>
+                                                </div>
+                                                <div class="spot__description">
+                                                    Уникальный алгоритм по принципу сеточной торговли, с высоким уровнем
+                                                    доходности и низким риском.
+                                                </div>
+                                                <ul class="spot__list">
+                                                    <li>Защита от "зависания"</li>
+                                                    <li>Защиа от "пампов/дампов"</li>
+                                                    <li>Грамотный расчет рисков</li>
+                                                </ul>
+                                                <div class="btn__block">
+                                                    <button class="add__btn open-popup-btn"  data-popup="FutM16Buy" data-overlay="overlayFutM16Buy">Создать</button>
+                                                    <button class="more__btn open-popup-btn" data-popup="FutM16Description" data-overlay="overlayFutM16Description">Подробнее</button>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="bot__main">
+                                    <div class="main__block" id="main__block">
+                                        <div class="block__rotated" id="block__rotated"></div>
+                                        <div class="bot__spot">
+                                            <div id="spotContent" class="spot__main">
+                                                <div class="header__spot">
+                                                    <div></div>
+                                                    <div class="spot__name">
+                                                        <img src="../img/ak-47.png">
+                                                        <h3>AK-47 (в разработке)</h3>
+                                                    </div>
+                                                    <div class="lightgreen">30$/месяц</div>
+                                                </div>
+                                                <div class="spot__block">
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Минимальный депозит</div>
+                                                        <div class="spot__component-price">
+                                                            <span class="lightgreen">N/N</span>
+                                                            USDT
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Целевая доходность</div>
+                                                        <div class="spot__component-price">до
+                                                            <span class="lightgreen">N/N%</span>
+                                                            в месяц
+                                                        </div>
+                                                    </div>
+                                                    <div class="spot__component">
+                                                        <div class="spot__component-text">Направление торговли</div>
+                                                        <div class="spot__component-price">LONG/SHORT</div>
+                                                    </div>
+                                                </div>
+                                                <div class="spot__description">
+                                                    Уникальный алгоритм, основанный на покупках и продажах в зонах интереса
+                                                    покупателя и продавца
+                                                </div>
+                                                <ul class="spot__list">
+                                                    <li>Защита от "зависания"</li>
+                                                    <li>Защиа от "пампов/дампов"</li>
+                                                    <li>Грамотный расчет рисков</li>
+                                                </ul>
+                                                <div class="btn__block">
+                                                    <button class="add__btn open-popup-btn"  data-popup="FutAKBuy" data-overlay="overlayFutAKBuy" disabled style="color: #fff; background: rgb(61, 61, 61);">Создать</button>
+                                                    <button class="more__btn open-popup-btn"data-popup="FutAKDescription" data-overlay="overlayFutAKDescription">Подробнее</button>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="dots">
+            <div class="dots__main" style="width: 60px;">
+                <label for="switch2-1"></label>
+                <label for="switch2-2"></label>
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <div id="container__exchanges" style="display: none;">
+            <div class="exchange__block">
+                <div class="row__block">
+                    <button id="exchangeBtn" class="active">Биржи</button>
+                    <button id="connectBtn">Подключить</button>
+                </div>
+                <div class="row__block">
+                    <button class="open-popup-btn" id="instructionBtn" data-popup="popupInstr" data-overlay="overlayInstr">Инструкция по подключению</button>
+                </div>
+            </div>
+    
+            <div class="exchange__container">
+                <div class="main__block" id="main__block">
+                    <div class="block__rotated" id="block__rotated"></div>
+                    <div class="block__cards">
+                        <div class="card" id="exchangeCard" style="display: block;">
+                            <div class="no__exchanges" style="display: none;">У вас еще нет подключенных бирж!</div>
+                            <table class="table__exchange">
+                                <thead>
+                                    <tr>
+                                        <th>Название аккаунта</th>
+                                        <th>Биржа</th>
+                                        <th>Удаление</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="wrap-exchange">{Account1_name}</td>
+                                        <td>{Exchang1_name}</td>
+                                        <td>
+                                            <button class="open-popup-btn" data-popup="popupDel" data-overlay="overlayDel">
+                                                <svg viewBox="0 0 50 50" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M19.287 3.076q5.664-.024 11.328.049 2.906.757 3.662 3.662.074 1.269.05 2.54 3.612-.025 7.226.048 4.163 1.268 3.662 5.615-.634 2.588-3.125 3.516a3637 3637 0 0 1-2.832 24.902q-.832 2.688-3.565 3.37-10.693.096-21.386 0-2.875-.63-3.662-3.468Q9.24 30.906 7.812 18.507q-4.158-2.024-2.734-6.446 1.036-2.16 3.37-2.685 3.563-.073 7.128-.049-.726-4.726 3.711-6.25m.977 3.125q4.938-.067 9.863.147.66.269.928.927c.125.676.174 1.364.146 2.051h-12.5a9.2 9.2 0 0 1 .147-2.05q.413-.95 1.416-1.075m-10.938 6.25q15.626-.024 31.25.049 2.028.467 1.22 2.393-.477.568-1.22.634-15.624.097-31.25 0-2.028-.466-1.22-2.392.507-.558 1.22-.684m1.856 6.25H38.72q-1.245 11.871-2.588 23.73-.368 1.1-1.514 1.221a957 957 0 0 1-19.336 0q-.87-.006-1.318-.732a3.2 3.2 0 0 1-.293-1.27q-1.305-11.468-2.49-22.949"
+                                                        fill="#fff" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M19.678 21.826q1.444-.315 2.1.977.096 7.617 0 15.234-.413 1.023-1.514.977-1.103.045-1.514-.977a594 594 0 0 1 0-15.234 1.94 1.94 0 0 1 .928-.977m9.375 0q1.444-.315 2.1.977.096 7.617 0 15.234-.413 1.023-1.514.977-1.103.045-1.514-.977a594 594 0 0 1 0-15.234 1.94 1.94 0 0 1 .928-.977"
+                                                        fill="#fff" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card" id="connectCard" style="display: none;">
+                            <div class="exchange-list">
+                                <div class="exchange-item">
+                                    <img src="../img/bybit.svg" alt="Биржа 1">
+                                    <span>ByBit</span>
+                                    <button class="connect-button open-popup-btn" data-popup="popupBybit" data-overlay="overlayBybit">Подключить</button>
+                                </div>
+                                <div class="exchange-item">
+                                    <img src="../img/okx.svg" alt="Биржа 2">
+                                    <span>OKX</span>
+                                    <button class="connect-button open-popup-btn" data-popup="popupOKX" data-overlay="overlayOKX">Подключить</button>
+                                </div>
+                                <div class="exchange-item">
+                                    <img src="../img/binance.svg" alt="Биржа 3">
+                                    <span>Binance</span>
+                                    <button class="connect-button open-popup-btn" data-popup="popupBinance" data-overlay="overlayBinance">Подключить</button>
+                                </div>
+                                <div class="exchange-item">
+                                    <img src="../img/gate.io-logo.png" alt="Биржа 4">
+                                    <span>Gate.io</span>
+                                    <button class="connect-button open-popup-btn" data-popup="popupGateio" data-overlay="overlayGateio">Подключить</button>
+                                </div>
+                                <div class="exchange-item">
+                                    <img src="../img/BingX.svg" alt="Биржа 5">
+                                    <span>Bingx</span>
+                                    <button class="connect-button open-popup-btn" data-popup="popupBingx" data-overlay="overlayBingx">Подключить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" data-popup="popup" data-overlay="overlay"></div>
+
+    <div class="popup" id="popup">
+        <span class="close-btn" data-popup="popup" data-overlay="overlay">X</span>
+        <h2>Настройки профиля</h2>
+        <div class="notification__block">
+            <div class="notification__title">Уведомление сделок</div>
+            <div class="notification__cont">
+                <button class="turnon__btn">Включить</button>
+                <button class="turnoff__btn">Выключить</button>
+            </div>
+        </div>
+        <div class="table__bots">
+            <div class="table__title">Торговые боты</div>
+            <div class="table__main">
+                <div class="no__bots" style="display: none;">У вас нет ботов</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Название бота</th>
+                            <th>Аккаунт</th>
+                            <th>Дата запуска</th>
+                            <th><img src="img/settings.svg" alt="Настройки"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="wrap">{Bot1_name}</td>
+                            <td class="wrap">{Account1_name}</td>
+                            <td>{date1}</td>
+                            <td>
+                                <button class="changeColorBtn" data-id="button1" onclick="changeColor(this)">
+                                    <svg viewBox="0 0 50 52" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="turnSvg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M24 0C23.4477 0 23 0.447708 23 1V19C23 19.5523 23.4477 20 24 20H26C26.5523 20 27 19.5523 27 19V1C27 0.447708 26.5523 0 26 0H24ZM39.2758 6.23172L37 9.41783V9.52167C42.4404 13.3165 46 19.6214 46 26.7576C46 38.3556 36.598 47.7576 25 47.7576C13.402 47.7576 4 38.3556 4 26.7576C4 19.5979 7.58301 13.2751 13.0537 9.48434L11.0659 6.00566L11.0626 5.99998C4.38989 10.4891 0 18.1107 0 26.7576C0 40.5647 11.1929 51.7576 25 51.7576C38.8071 51.7576 50 40.5647 50 26.7576C50 18.2578 45.7581 10.7486 39.2758 6.23172Z"
+                                            fill="#24f22b" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <!-- M16 Description Popup -->
+     <div class="overlay" id="overlayM16Description" data-popup="spotM16Description" data-overlay="overlayM16Description"></div>
+     <div class="popup" id="spotM16Description">
+         <span class="close-btn" data-popup="spotM16Description" data-overlay="overlayM16Description">X</span>
+         <h2>Торговый алгоритм - M16</h2>
+         <div class="notification__block">Описание</div>
+     </div>
+ 
+ 
+     <!-- M16 Buy Popup -->
+     <div class="overlay" id="overlayM16Buy" data-popup="spotM16Buy" data-overlay="overlayM16Buy"></div>
+     <div class="popup" id="spotM16Buy">
+         <span class="close-btn" data-popup="spotM16Buy" data-overlay="overlayM16Buy">X</span>
+         <h3>Создание бота - M16</h3>
+         <div class="buy__block">
+             <h3>Введите название бота</h3>
+             <input type="text" class="name__bot" placeholder="Название бота..">
+             <h3>Выберите название аккаунта</h3>
+             <div class="dropdown">
+                <button class="dropbtn">Выберите аккаунт для подключения</button>
+                <div class="dropdown-content">
+                    <a href="#" data-value="acc">acc</a>
+                    <a href="#" data-value="acc2">acc2</a>
+                    <a href="#" data-value="acc3">acc3</a>
+                    <a href="#" data-value="acc4">acc4</a>
+                </div>
+            </div>
+             <div class="popup__block-btn">
+                 <div class="popup__btn-buy">Оплатить</div>
+                 <div class="popup__btn-add">Создать</div>
+             </div>
+             <h6 style="display: none;">У вас недостаточно средств для оплаты данного алгоритма! Пожалуйста пополните
+                 свой счет в разделе «Баланс»</h6>
+         </div>
+     </div>
+ 
+     <!-- Desert Deagle Description Popup -->
+     <div class="overlay" id="overlayDeagleDescription" data-popup="spotDeagleDescription" data-overlay="overlayDeagleDescription"></div>
+     <div class="popup" id="spotDeagleDescription">
+         <span class="close-btn" data-popup="spotDeagleDescription" data-overlay="overlayDeagleDescription">X</span>
+         <h2>Торговый алгоритм -<br> Desert Deagle</h2>
+         <div class="notification__block">Описание</div>
+     </div>
+ 
+     <!-- Desert Deagle Buy Popup -->
+     <div class="overlay" id="overlayDeagleBuy" data-popup="spotDeagleBuy" data-overlay="overlayDeagleBuy"></div>
+     <div class="popup" id="spotDeagleBuy">
+         <span class="close-btn" data-popup="spotDeagleBuy" data-overlay="overlayDeagleBuy">X</span>
+         <h3>Создание бота - Desert Eagle</h3>
+         <div class="buy__block">
+             <h3>Введите название бота</h3>
+             <input type="text" class="name__bot" placeholder="Название бота..">
+             <h3>Выберите название аккаунта</h3>
+             <div class="dropdown">
+                <button class="dropbtn">Выберите аккаунт для подключения</button>
+                <div class="dropdown-content">
+                    <a href="#" data-value="acc">acc</a>
+                    <a href="#" data-value="acc2">acc2</a>
+                    <a href="#" data-value="acc3">acc3</a>
+                    <a href="#" data-value="acc4">acc4</a>
+                </div>
+            </div>
+             <div class="popup__block-btn">
+                 <div class="popup__btn-buy">Оплатить</div>
+                 <div class="popup__btn-add">Создать</div>
+             </div>
+             <h6 style="display: none;">У вас недостаточно средств для оплаты данного алгоритма! Пожалуйста пополните
+                 свой счет в разделе «Баланс»</h6>
+         </div>
+     </div>
+
+         <!-- M16 Buy Popup -->
+         <div class="overlay" id="overlayFutM16Buy" data-popup="FutM16Buy" data-overlay="overlayFutM16Buy"></div>
+         <div class="popup" id="FutM16Buy">
+             <span class="close-btn"  data-popup="FutM16Buy" data-overlay="overlayFutM16Buy">X</span>
+             <h3>Создание бота - M16</h3>
+             <div class="buy__block">
+                <h3>Введите название бота</h3>
+                <input type="text" class="name__bot" placeholder="Название бота..">
+                <h3>Выберите название аккаунта</h3>
+                <div class="dropdown">
+                    <button class="dropbtn">Выберите аккаунт для подключения</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="acc">acc</a>
+                        <a href="#" data-value="acc2">acc2</a>
+                        <a href="#" data-value="acc3">acc3</a>
+                        <a href="#" data-value="acc4">acc4</a>
+                    </div>
+                </div>
+                <div class="popup__block-btn">
+                    <div class="popup__btn-buy">Оплатить</div>
+                    <div class="popup__btn-add">Создать</div>
+                </div>
+                <h6 style="display: none;">У вас недостаточно средств для оплаты данного алгоритма! Пожалуйста пополните
+                    свой счет в разделе «Баланс»</h6>
+            </div>
+         </div>
+ 
+         <!-- M16 Fut Description -->
+         <div class="overlay" id="overlayFutM16Description" data-popup="FutM16Description" data-overlay="overlayFutM16Description"></div>
+         <div class="popup" id="FutM16Description">
+             <span class="close-btn" data-popup="FutM16Description" data-overlay="overlayFutM16Description">X</span>
+             <h2>Торговый алгоритм - M16</h2>
+             <div class="notification__block">Описание</div>
+         </div>
+ 
+         <!-- AK-47 Buy Popup -->
+         <div class="overlay" id="overlayFutAKBuy" data-popup="FutAKBuy" data-overlay="overlayFutAKBuy"></div>
+         <div class="popup" id="FutAKBuy">
+             <span class="close-btn" data-popup="FutAKBuy" data-overlay="overlayFutAKBuy">X</span>
+             <h3>Создание бота - AK-47</h3>
+             <div class="buy__block">
+                 <h3>Введите название бота</h3>
+                 <input type="text" class="name__bot" placeholder="Название бота..">
+                 <h3>Выберите название аккаунта</h3>
+                 <div class="dropdown">
+                    <button class="dropbtn">Выберите аккаунт для подключения</button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="acc">acc</a>
+                        <a href="#" data-value="acc2">acc2</a>
+                        <a href="#" data-value="acc3">acc3</a>
+                        <a href="#" data-value="acc4">acc4</a>
+                    </div>
+                </div>
+                 <div class="popup__block-btn">
+                     <div class="popup__btn-buy">Оплатить</div>
+                     <div class="popup__btn-add">Создать</div>
+                 </div>
+                 <h6 style="display: none;">У вас недостаточно средств для оплаты данного алгоритма! Пожалуйста пополните
+                     свой счет в разделе «Баланс»</h6>
+             </div>
+         </div>
+ 
+         <!-- AK-47 Fut Description -->
+         <div class="overlay" id="overlayFutAKDescription" data-popup="FutAKDescription" data-overlay="overlayFutAKDescription"></div>
+         <div class="popup" id="FutAKDescription">
+             <span class="close-btn" data-popup="FutAKDescription" data-overlay="overlayFutAKDescription">X</span>
+             <h2>Торговый алгоритм - <br> AK-47</h2>
+             <div class="notification__block">Описание</div>
+         </div>
+
+    <!-- Binance Popup -->
+    <div class="overlay" id="overlayBinance" data-popup="popupBinance" data-overlay="overlayBinance"></div>
+
+    <div class="popup" id="popupBinance">
+        <span class="close-btn" data-popup="popupBinance" data-overlay="overlayBinance">X</span>
+        <div class="popup__content">
+            <h2 id="modal-title">Binance</h2>
+            <label>
+                Введите название для аккаунта:
+                <p>Максимальное кол-во символов - 23</p>
+                <input type="text" id="account-name" maxlength="23" oninput="checkForm()">
+            </label>
+            <label>
+                Введите API KEY:
+                <input type="text" id="api-key" oninput="checkForm()">
+            </label>
+            <label>
+                Введите SECRET KEY:
+                <input type="text" id="secret-key" oninput="checkForm()">
+            </label>
+            <label>
+                Доверенные IP адреса:
+                <div class="block__trust-ip">
+                    <textarea id="trusted-ips" readonly class="trusted-ip">{Trust_ip}</textarea>
+                    <button class="copy-button" id="copy--btn"><img src="../img/copy-text.svg" alt="copy"></button>
+                </div>  
+            </label>
+            <button class="connect-button" id="submit-button" disabled>Подключить</button>
+        </div>
+    </div>
+
+    <!-- ByBit Popup -->
+    <div class="overlay" id="overlayBybit" data-popup="popupBybit" data-overlay="overlayBybit"></div>
+
+    <div class="popup" id="popupBybit">
+        <span class="close-btn" data-popup="popupBybit" data-overlay="overlayBybit">X</span>
+        <div class="popup__content">
+            <h2 id="modal-title">ByBit</h2>
+            <label>
+                Введите название для аккаунта:
+                <p>Максимальное кол-во символов - 23</p>
+                <input type="text" id="account-name" maxlength="23" oninput="checkForm()">
+            </label>
+            <label>
+                Введите API KEY:
+                <input type="text" id="api-key" oninput="checkForm()">
+            </label>
+            <label>
+                Введите SECRET KEY:
+                <input type="text" id="secret-key" oninput="checkForm()">
+            </label>
+            <label>
+                Доверенные IP адреса:
+                <div class="block__trust-ip">
+                    <textarea id="trusted-ips" readonly class="trusted-ip">{Trust_ip}</textarea>
+                    <button class="copy-button" id="copy--btn"><img src="../img/copy-text.svg" alt="copy"></button>
+                </div>  
+            </label>
+            <button class="connect-button" id="submit-button" disabled>Подключить</button>
+        </div>
+    </div>
+
+    <!-- OKX Popup -->
+    <div class="overlay" id="overlayOKX" data-popup="popupOKX" data-overlay="overlayOKX"></div>
+
+    <div class="popup" id="popupOKX">
+        <span class="close-btn" data-popup="popupOKX" data-overlay="overlayOKX">X</span>
+        <div class="popup__content">
+            <h2 id="modal-title">OKX</h2>
+            <label>
+                Введите название для аккаунта:
+                <p>Максимальное кол-во символов - 23</p>
+                <input type="text" id="account-name" maxlength="23" oninput="checkForm()">
+            </label>
+            <label>
+                Введите API KEY:
+                <input type="text" id="api-key" oninput="checkForm()">
+            </label>
+            <label>
+                Введите SECRET KEY:
+                <input type="text" id="secret-key" oninput="checkForm()">
+            </label>
+            <label>
+                Доверенные IP адреса:
+                <div class="block__trust-ip">
+                    <textarea id="trusted-ips" readonly class="trusted-ip">{Trust_ip}</textarea>
+                    <button class="copy-button" id="copy--btn"><img src="../img/copy-text.svg" alt="copy"></button>
+                </div>  
+            </label>
+            <button class="connect-button" id="submit-button" disabled>Подключить</button>
+        </div>
+    </div>
+
+    <!-- Gate.io Popup -->
+    <div class="overlay" id="overlayGateio" data-popup="popupGateio" data-overlay="overlayGateio"></div>
+
+    <div class="popup" id="popupGateio">
+        <span class="close-btn"  data-popup="popupGateio" data-overlay="overlayGateio">X</span>
+        <div class="popup__content">
+            <h2 id="modal-title">Gate.io</h2>
+            <label>
+                Введите название для аккаунта:
+                <p>Максимальное кол-во символов - 23</p>
+                <input type="text" id="account-name" maxlength="23" oninput="checkForm()">
+            </label>
+            <label>
+                Введите API KEY:
+                <input type="text" id="api-key" oninput="checkForm()">
+            </label>
+            <label>
+                Введите SECRET KEY:
+                <input type="text" id="secret-key" oninput="checkForm()">
+            </label>
+            <label>
+                Доверенные IP адреса:
+                <div class="block__trust-ip">
+                    <textarea id="trusted-ips" readonly class="trusted-ip">{Trust_ip}</textarea>
+                    <button class="copy-button" id="copy--btn"><img src="../img/copy-text.svg" alt="copy"></button>
+                </div>    
+            </label>
+            <button class="connect-button" id="submit-button" disabled>Подключить</button>
+        </div>
+    </div>
+
+        <!-- Bingx Popup -->
+        <div class="overlay" id="overlayBingx" data-popup="popupBingx" data-overlay="overlayBingx"></div>
+
+        <div class="popup" id="popupBingx">
+            <span class="close-btn" data-popup="popupBingx" data-overlay="overlayBingx">X</span>
+            <div class="popup__content">
+                <h2 id="modal-title">Bingx</h2>
+                <label>
+                    Введите название для аккаунта:
+                    <p>Максимальное кол-во символов - 23</p>
+                    <input type="text" id="account-name" maxlength="23" oninput="checkForm()">
+                </label>+
+                <label>
+                    Введите API KEY:
+                    <input type="text" id="api-key" oninput="checkForm()">
+                </label>
+                <label>
+                    Введите SECRET KEY:
+                    <input type="text" id="secret-key" oninput="checkForm()">
+                </label>
+                <label>
+                    Доверенные IP адреса:
+                    <div class="block__trust-ip">
+                        <textarea id="trusted-ips" readonly class="trusted-ip">{Trust_ip}</textarea>
+                        <button class="copy-button" id="copy--btn"><img src="../img/copy-text.svg" alt="copy"></button>
+                    </div>  
+                </label>
+                <button class="connect-button" id="submit-button" disabled>Подключить</button>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlayInstr" data-popup="popupInstr" data-overlay="overlayInstr"></div>
+        <div class="popup" id="popupInstr">
+            <span class="close-btn" data-popup="popupInstr" data-overlay="overlayInstr">X</span>
+            <h4>Инструкция по подключению бирж</h4>
+            <div class="popup__content">
+                <ol class="instruction__list">
+                    <li>Перейдите в раздел «Подключить».</li>
+                    <li>Выберите необходимую биржу из списка доступных, после чего нажмите «Подключить» </li>
+                    <li>Далее следуйте инструкциям.</li>
+                </ol>
+            </div>
+        
+        </div>
+
+        <div class="overlay" id="overlayDel" data-popup="popupDel" data-overlay="overlayDel"></div>
+        <div class="popup" id="popupDel">
+            <h2>Удаление</h2>
+            <span class="close-btn" data-popup="popupDel" data-overlay="overlayDel">X</span>
+            <div class="popup__content">
+                <h4>Желаете удалить аккаунт?</h4>
+                <div class="delete__cont">
+                    <button class="delete__true">Да</button>
+                    <button class="delete__false">Нет</button>
+                </div>
+            </div>
+        </div>
+        <script defer src="js/app.js"></script>
+</body>
+
+</html>
