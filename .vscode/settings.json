@@ -1,0 +1,5 @@
+{
+    "CodeGPT.query.language": "Russian",
+    "CodeGPT.Autocomplete.enabled": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
+}
